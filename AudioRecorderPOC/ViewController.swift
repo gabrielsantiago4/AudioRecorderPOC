@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import SoundAnalysis
 
 class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
@@ -116,8 +117,29 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
 
     @IBAction func analyzeAudio(_ sender: Any) {
-        print("apertou")
+        do {
+            let fileAnalyzer = try SNAudioFileAnalyzer(url: getDocumentsDirectory().appendingPathComponent(fileName))
+            let request = try SNClassifySoundRequest(mlModel: NicklebackClassifier().model)
+            try fileAnalyzer.add(request, withObserver: self)
+            fileAnalyzer.analyze()
+        } catch {
+            print(error)
+        }
     }
+
+}
+
+extension ViewController: SNResultsObserving {
+
+
+    func request(_ request: SNRequest, didProduce result: SNResult) {
+        result
+    }
+
+    func requestDidComplete(_ request: SNRequest) {
+        print("processou")
+    }
+
 
 }
 
