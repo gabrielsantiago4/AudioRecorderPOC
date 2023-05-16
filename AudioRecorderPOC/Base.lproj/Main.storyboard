@@ -60,30 +60,39 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNU-VF-oeL">
-                                <rect key="frame" x="21" y="225" width="350" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNU-VF-oeL">
+                                <rect key="frame" x="22" y="485" width="349" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nsx-g4-hMY">
+                                <rect key="frame" x="39" y="80" width="315" height="408"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lfD-xg-VuC" secondAttribute="trailing" constant="22" id="7DZ-rd-qEu"/>
-                            <constraint firstItem="lfD-xg-VuC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="562" id="7Sf-uL-XlY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lfD-xg-VuC" secondAttribute="bottom" constant="63" id="9DD-8q-zKE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FNU-VF-oeL" secondAttribute="trailing" constant="22" id="DLS-aB-ItY"/>
-                            <constraint firstItem="lfD-xg-VuC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="eRo-9B-QVY"/>
-                            <constraint firstItem="FNU-VF-oeL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="hnf-7o-yOw"/>
-                            <constraint firstItem="FNU-VF-oeL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="166" id="zRo-k8-xh1"/>
+                            <constraint firstItem="lfD-xg-VuC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="1th-VH-Hb8"/>
+                            <constraint firstItem="nsx-g4-hMY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="7Gp-aa-bUG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FNU-VF-oeL" secondAttribute="bottom" constant="267" id="7es-c1-iXo"/>
+                            <constraint firstItem="lfD-xg-VuC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="562" id="8Yp-JX-0BA"/>
+                            <constraint firstItem="FNU-VF-oeL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="426" id="FKq-2p-h4a"/>
+                            <constraint firstItem="nsx-g4-hMY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="Vyn-fI-BAm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nsx-g4-hMY" secondAttribute="bottom" constant="330" id="aoX-yi-ZWZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nsx-g4-hMY" secondAttribute="trailing" constant="39" id="ccY-qu-7U1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lfD-xg-VuC" secondAttribute="trailing" constant="22" id="gK0-0d-nCC"/>
+                            <constraint firstItem="FNU-VF-oeL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="ktp-Yb-c2Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lfD-xg-VuC" secondAttribute="bottom" constant="63" id="sO2-G1-NmF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FNU-VF-oeL" secondAttribute="trailing" constant="22" id="uzW-sW-9bp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="nsx-g4-hMY" id="XyV-2b-nbJ"/>
                         <outlet property="nickelbackButton" destination="Dkb-hC-eXV" id="gJt-It-qVg"/>
                         <outlet property="playButton" destination="KaR-1b-KMU" id="26g-Id-6hF"/>
                         <outlet property="recordButton" destination="tlA-nA-Hmf" id="ZWU-Ua-uK6"/>
-                        <outlet property="resultText" destination="FNU-VF-oeL" id="aBF-AG-4z2"/>
+                        <outlet property="resultText" destination="FNU-VF-oeL" id="gPC-Ss-e4r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

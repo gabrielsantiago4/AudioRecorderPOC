@@ -13,8 +13,18 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var nickelbackButton: UIButton!
-    @IBOutlet weak var resultText: UILabel!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var resultText: UILabel! {
+        didSet{
+            if resultText.text == "Totally Nickelback"{
+                self.imageView.image = UIImage(named: "chadkroeger")
+            } else if resultText.text == "Not Nickelback"{
+                self.imageView.image = UIImage(named: "adamdriver")
+            }
+        }
+    }
+
 
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
@@ -27,6 +37,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecorder()
+        imageView.layer.cornerRadius = 15
     }
 
     func getDocumentsDirectory() -> URL {
@@ -97,7 +108,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             playButton.setTitle("Play", for: .normal)
             recordButton.isEnabled = true
             isPlaying = false
-
         }
     }
 
@@ -138,6 +148,12 @@ extension ViewController: SNResultsObserving {
         guard let classification = result.classifications.first else { return }
         DispatchQueue.main.async {
             self.resultText.text = classification.identifier
+
+            if self.resultText.text == "Totally Nickelback"{
+                self.imageView.image = UIImage(named: "chadkroeger")
+            } else if self.resultText.text == "Not Nickelback"{
+                self.imageView.image = UIImage(named: "adamdriver")
+            }
         }
     }
 
