@@ -16,39 +16,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlA-nA-Hmf">
-                                <rect key="frame" x="44" y="402" width="98" height="49"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Record">
-                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QhE-ol-895"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaR-1b-KMU">
-                                <rect key="frame" x="242" y="402" width="98" height="49"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
-                                <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ux3-OO-Dt7"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lfD-xg-VuC">
+                                <rect key="frame" x="21" y="621" width="350" height="134"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="sqo-Q9-RtH">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="57"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlA-nA-Hmf">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="57"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Record">
+                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QhE-ol-895"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaR-1b-KMU">
+                                                <rect key="frame" x="225" y="0.0" width="125" height="57"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                                <connections>
+                                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ux3-OO-Dt7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="FAm-Bq-INS"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dkb-hC-eXV">
+                                        <rect key="frame" x="0.0" y="77" width="350" height="57"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="TyE-H3-JjY"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Is it nickelback?">
+                                            <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="analyzeAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFw-4E-LBJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KaR-1b-KMU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="343" id="56x-Zi-uDy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tlA-nA-Hmf" secondAttribute="trailing" constant="251" id="B2Y-PQ-A7B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KaR-1b-KMU" secondAttribute="bottom" constant="367" id="BEP-Fo-FnF"/>
-                            <constraint firstItem="tlA-nA-Hmf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="343" id="DYg-U5-MNJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tlA-nA-Hmf" secondAttribute="bottom" constant="367" id="MPy-J0-xGE"/>
-                            <constraint firstItem="tlA-nA-Hmf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="OB3-aC-Fvt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KaR-1b-KMU" secondAttribute="trailing" constant="53" id="SlV-Sn-YPa"/>
-                            <constraint firstItem="KaR-1b-KMU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="242" id="nRv-ka-diR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lfD-xg-VuC" secondAttribute="trailing" constant="22" id="7DZ-rd-qEu"/>
+                            <constraint firstItem="lfD-xg-VuC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="562" id="7Sf-uL-XlY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lfD-xg-VuC" secondAttribute="bottom" constant="63" id="9DD-8q-zKE"/>
+                            <constraint firstItem="lfD-xg-VuC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="eRo-9B-QVY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nickelbackButton" destination="Dkb-hC-eXV" id="gJt-It-qVg"/>
                         <outlet property="playButton" destination="KaR-1b-KMU" id="26g-Id-6hF"/>
                         <outlet property="recordButton" destination="tlA-nA-Hmf" id="ZWU-Ua-uK6"/>
                     </connections>
@@ -61,6 +84,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

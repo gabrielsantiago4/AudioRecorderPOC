@@ -11,7 +11,7 @@ import AVFoundation
 class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
     @IBOutlet weak var recordButton: UIButton!
-
+    @IBOutlet weak var nickelbackButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
 
     var audioRecorder: AVAudioRecorder!
@@ -112,6 +112,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             playButton.isEnabled = false
             isRecording = false
         }
+    }
+
+
+    @IBAction func analyzeAudio(_ sender: Any) {
+        print("apertou")
     }
 
 }
