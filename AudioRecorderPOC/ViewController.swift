@@ -15,15 +15,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBOutlet weak var nickelbackButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var resultText: UILabel! {
-        didSet{
-            if resultText.text == "Totally Nickelback"{
-                self.imageView.image = UIImage(named: "chadkroeger")
-            } else if resultText.text == "Not Nickelback"{
-                self.imageView.image = UIImage(named: "adamdriver")
-            }
-        }
-    }
+    @IBOutlet weak var resultText: UILabel!
 
 
     var audioRecorder: AVAudioRecorder!
