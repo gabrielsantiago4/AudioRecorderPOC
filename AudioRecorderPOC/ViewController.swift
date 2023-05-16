@@ -13,6 +13,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var nickelbackButton: UIButton!
+    @IBOutlet weak var resultText: UILabel!
     @IBOutlet weak var playButton: UIButton!
 
     var audioRecorder: AVAudioRecorder!
@@ -133,7 +134,11 @@ extension ViewController: SNResultsObserving {
 
 
     func request(_ request: SNRequest, didProduce result: SNResult) {
-        result
+        guard let result = result as? SNClassificationResult else { return }
+        guard let classification = result.classifications.first else { return }
+        DispatchQueue.main.async {
+            self.resultText.text = classification.identifier
+        }
     }
 
     func requestDidComplete(_ request: SNRequest) {
