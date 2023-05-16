@@ -51,7 +51,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             audioRecorder.delegate = self
             audioRecorder.prepareToRecord()
         } catch {
-            
+
             print(error)
         }
     }
@@ -63,7 +63,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             audioPlayer = try AVAudioPlayer(contentsOf: audioFileName)
             audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
-            audioPlayer.volume = 30.0
+            audioPlayer.volume = 5.0
 
         } catch {
             print(error)
@@ -84,29 +84,33 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
 
     @IBAction func play(_ sender: Any) {
-        if playButton.titleLabel?.text == "Play" {
+        if isPlaying == false {
             setupPlayer()
             audioPlayer.play()
             playButton.setTitle("Stop", for: .normal)
             recordButton.isEnabled = false
+            isPlaying = true
         } else {
             audioPlayer.stop()
             playButton.setTitle("Play", for: .normal)
             recordButton.isEnabled = true
+            isPlaying = false
 
         }
     }
 
     @IBAction func record(_ sender: Any) {
-        if recordButton.titleLabel?.text == "Record" {
+        if isRecording == false {
             audioRecorder.record()
             recordButton.setTitle("Stop", for: .normal)
             playButton.isEnabled = false
+            isRecording = true
 
         } else {
             audioRecorder.stop()
             recordButton.setTitle("Record", for: .normal)
             playButton.isEnabled = false
+            isRecording = false
         }
     }
 
