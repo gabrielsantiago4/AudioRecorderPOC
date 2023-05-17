@@ -29,14 +29,13 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecorder()
-        imageView.layer.cornerRadius = 15
+
     }
 
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-
 
 
     func setupRecorder() {
@@ -48,7 +47,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             AVSampleRateKey: 44100.2,
             AVNumberOfChannelsKey: 2,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
-
         ] as [String: Any]
 
         do{
@@ -68,12 +66,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             audioPlayer = try AVAudioPlayer(contentsOf: audioFileName)
             audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
-            audioPlayer.volume = 5.0
+            audioPlayer.volume = 15.0
 
         } catch {
             print(error)
         }
-
     }
 
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
@@ -84,8 +81,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         recordButton.isEnabled = true
         playButton.setTitle("Play", for: .normal)
     }
-
-
 
 
     @IBAction func play(_ sender: Any) {
@@ -109,7 +104,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             recordButton.setTitle("Stop", for: .normal)
             playButton.isEnabled = false
             isRecording = true
-
         } else {
             audioRecorder.stop()
             recordButton.setTitle("Record", for: .normal)
@@ -129,12 +123,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             print(error)
         }
     }
-
 }
 
 extension ViewController: SNResultsObserving {
-
-
+    
     func request(_ request: SNRequest, didProduce result: SNResult) {
         guard let result = result as? SNClassificationResult else { return }
         guard let classification = result.classifications.first else { return }
@@ -152,7 +144,5 @@ extension ViewController: SNResultsObserving {
     func requestDidComplete(_ request: SNRequest) {
         print("processou")
     }
-
-
 }
 
