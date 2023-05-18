@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		364D923C2A15BBA8001B78C6 /* NicklebackClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 364D923B2A15BBA8001B78C6 /* NicklebackClassifier.mlmodel */; };
 		366855C42A1314EE0043CC0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366855C32A1314EE0043CC0F /* AppDelegate.swift */; };
 		366855C62A1314EE0043CC0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366855C52A1314EE0043CC0F /* SceneDelegate.swift */; };
 		366855C82A1314EE0043CC0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366855C72A1314EE0043CC0F /* ViewController.swift */; };
 		366855CB2A1314EE0043CC0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366855C92A1314EE0043CC0F /* Main.storyboard */; };
 		366855CD2A1314EE0043CC0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366855CC2A1314EE0043CC0F /* Assets.xcassets */; };
 		366855D02A1314EE0043CC0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366855CE2A1314EE0043CC0F /* LaunchScreen.storyboard */; };
-		36FE468F2A13B81F000E8D68 /* NicklebackClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 36FE468E2A13B81F000E8D68 /* NicklebackClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		364D923B2A15BBA8001B78C6 /* NicklebackClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = NicklebackClassifier.mlmodel; path = ../../../NicklebackClassifier.mlmodel; sourceTree = "<group>"; };
 		366855C02A1314EE0043CC0F /* AudioRecorderPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRecorderPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		366855C32A1314EE0043CC0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366855C52A1314EE0043CC0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		366855CC2A1314EE0043CC0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		366855CF2A1314EE0043CC0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		366855D12A1314EE0043CC0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36FE468E2A13B81F000E8D68 /* NicklebackClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = NicklebackClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				366855C72A1314EE0043CC0F /* ViewController.swift */,
 				366855C92A1314EE0043CC0F /* Main.storyboard */,
 				366855CC2A1314EE0043CC0F /* Assets.xcassets */,
+				364D923B2A15BBA8001B78C6 /* NicklebackClassifier.mlmodel */,
 				366855CE2A1314EE0043CC0F /* LaunchScreen.storyboard */,
-				36FE468E2A13B81F000E8D68 /* NicklebackClassifier.mlmodel */,
 				366855D12A1314EE0043CC0F /* Info.plist */,
 			);
 			path = AudioRecorderPOC;
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36FE468F2A13B81F000E8D68 /* NicklebackClassifier.mlmodel in Sources */,
+				364D923C2A15BBA8001B78C6 /* NicklebackClassifier.mlmodel in Sources */,
 				366855C82A1314EE0043CC0F /* ViewController.swift in Sources */,
 				366855C42A1314EE0043CC0F /* AppDelegate.swift in Sources */,
 				366855C62A1314EE0043CC0F /* SceneDelegate.swift in Sources */,
