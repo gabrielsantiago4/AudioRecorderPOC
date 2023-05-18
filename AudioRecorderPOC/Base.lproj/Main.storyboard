@@ -35,7 +35,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaR-1b-KMU">
                                                 <rect key="frame" x="225" y="0.0" width="125" height="57"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Preview"/>
                                                 <connections>
                                                     <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ux3-OO-Dt7"/>
                                                 </connections>

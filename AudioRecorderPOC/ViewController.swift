@@ -18,6 +18,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBOutlet weak var resultText: UILabel!
 
 
+    var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
 
@@ -28,7 +29,23 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRecorder()
+
+        recordingSession = AVAudioSession.sharedInstance()
+
+
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { allowed in
+                print("ALLOWED:", allowed)
+                self.setupRecorder()
+            }
+        } catch {
+            // failed to record!
+        }
+
+
+
 
     }
 
@@ -44,9 +61,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         let recordSettings = [
 
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-            AVSampleRateKey: 44100.2,
-            AVNumberOfChannelsKey: 2,
+            AVSampleRateKey: 44100,
+            AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
+
         ] as [String: Any]
 
         do{
@@ -60,16 +78,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     }
 
     func setupPlayer() {
+        
         let audioFileName = getDocumentsDirectory().appendingPathComponent(fileName)
 
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: audioFileName)
             audioPlayer.delegate = self
-            audioPlayer.prepareToPlay()
-            audioPlayer.volume = 15.0
+//            audioPlayer.prepareToPlay()
+            audioPlayer.volume = 80.0
 
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
 
@@ -79,20 +98,22 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordButton.isEnabled = true
-        playButton.setTitle("Play", for: .normal)
+        playButton.setTitle("Preview", for: .normal)
+        isPlaying = false
     }
 
 
     @IBAction func play(_ sender: Any) {
         if isPlaying == false {
             setupPlayer()
+
             audioPlayer.play()
             playButton.setTitle("Stop", for: .normal)
             recordButton.isEnabled = false
             isPlaying = true
         } else {
             audioPlayer.stop()
-            playButton.setTitle("Play", for: .normal)
+            playButton.setTitle("Preview", for: .normal)
             recordButton.isEnabled = true
             isPlaying = false
         }
